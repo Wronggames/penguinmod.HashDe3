@@ -90,14 +90,104 @@
     }
     return hashedResult;
   };
-  
+
+  // Define block to return hashed input to original message
+  ext.reverseHash = function(input) {
+    let originalMessage = '';
+    for (let i = 0; i < input.length; i++) {
+      const character = input.charAt(i);
+      switch (character) {
+        case '1':
+          originalMessage += 'A';
+          break;
+        case 'W':
+          originalMessage += 'B';
+          break;
+        case '#':
+          originalMessage += 'C';
+          break;
+        case 'U':
+          originalMessage += 'D';
+          break;
+        case 'T':
+          originalMessage += 'E';
+          break;
+        case 'S':
+          originalMessage += 'F';
+          break;
+        case 'R':
+          originalMessage += 'G';
+          break;
+        case 'Q':
+          originalMessage += 'H';
+          break;
+        case 'P':
+          originalMessage += 'I';
+          break;
+        case 'O':
+          originalMessage += 'J';
+          break;
+        case 'N':
+          originalMessage += 'K';
+          break;
+        case 'M':
+          originalMessage += 'L';
+          break;
+        case '!':
+          originalMessage += 'N';
+          break;
+        case 'J':
+          originalMessage += 'O';
+          break;
+        case 'I':
+          originalMessage += 'P';
+          break;
+        case 'H':
+          originalMessage += 'Q';
+          break;
+        case 'D':
+          originalMessage += 'R';
+          break;
+        case 'F':
+          originalMessage += 'S';
+          break;
+        case 'R':
+          originalMessage += 'T';
+          break;
+        case '3':
+          originalMessage += 'U';
+          break;
+        case '{':
+          originalMessage += 'V';
+          break;
+        case '}':
+          originalMessage += 'W';
+          break;
+        case '4':
+          originalMessage += 'X';
+          break;
+        case 'Z':
+          originalMessage += 'Y';
+          break;
+        case '3':
+          originalMessage += 'Z';
+          break;
+        default:
+          originalMessage += character; // If not a hashed character, keep it unchanged
+          break;
+      }
+    }
+    return originalMessage;
+  };
+
   // Describe your extension
   var descriptor = {
     blocks: [
-      ['r', 'custom hash %s', 'customHash', '']
+      ['r', 'Hash In DE3 %s', 'customHash', ''],
+      ['r', 'Reverse Hash %s', 'reverseHash', '']
     ],
   };
-  
+
   // Register the extension
   ScratchExtensions.register('Custom Hash Extension', descriptor, ext);
 })(this);
