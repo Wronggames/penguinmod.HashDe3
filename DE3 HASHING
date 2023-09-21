@@ -3,8 +3,9 @@
   ext.customHash = function(input) {
     let hashedResult = '';
     for (let i = 0; i < input.length; i++) {
-      const letter = input.charAt(i).toUpperCase(); // Convert input to uppercase
-      switch (letter) {
+      const character = input.charAt(i);
+      const upperCharacter = character.toUpperCase(); // Convert input character to uppercase
+      switch (upperCharacter) {
         case 'A':
           hashedResult += '1';
           break;
@@ -84,14 +85,14 @@
           hashedResult += '3';
           break;
         default:
-          hashedResult += letter; // If not a letter, keep it unchanged
+          hashedResult += character; // If not a letter, keep it unchanged
           break;
       }
     }
     return hashedResult;
   };
 
-  // Define block to return hashed input to original message
+  // Define block to return hashed input to the original message
   ext.reverseHash = function(input) {
     let originalMessage = '';
     for (let i = 0; i < input.length; i++) {
@@ -172,6 +173,84 @@
         case '3':
           originalMessage += 'Z';
           break;
+        case 'a':
+          originalMessage += '1'; // Lowercase 'a' maps to '1'
+          break;
+        case 'b':
+          originalMessage += 'W'; // Lowercase 'b' maps to 'W'
+          break;
+        case 'c':
+          originalMessage += '#'; // Lowercase 'c' maps to '#'
+          break;
+        case 'd':
+          originalMessage += 'U'; // Lowercase 'd' maps to 'U'
+          break;
+        case 'e':
+          originalMessage += 'T'; // Lowercase 'e' maps to 'T'
+          break;
+        case 'f':
+          originalMessage += 'S'; // Lowercase 'f' maps to 'S'
+          break;
+        case 'g':
+          originalMessage += 'R'; // Lowercase 'g' maps to 'R'
+          break;
+        case 'h':
+          originalMessage += 'Q'; // Lowercase 'h' maps to 'Q'
+          break;
+        case 'i':
+          originalMessage += 'P'; // Lowercase 'i' maps to 'P'
+          break;
+        case 'j':
+          originalMessage += 'O'; // Lowercase 'j' maps to 'O'
+          break;
+        case 'k':
+          originalMessage += 'N'; // Lowercase 'k' maps to 'N'
+          break;
+        case 'l':
+          originalMessage += 'M'; // Lowercase 'l' maps to 'M'
+          break;
+        case 'm':
+          originalMessage += 'L'; // Lowercase 'm' maps to 'L'
+          break;
+        case 'n':
+          originalMessage += '!'; // Lowercase 'n' maps to '!'
+          break;
+        case 'o':
+          originalMessage += 'J'; // Lowercase 'o' maps to 'J'
+          break;
+        case 'p':
+          originalMessage += 'I'; // Lowercase 'p' maps to 'I'
+          break;
+        case 'q':
+          originalMessage += 'H'; // Lowercase 'q' maps to 'H'
+          break;
+        case 'r':
+          originalMessage += 'D'; // Lowercase 'r' maps to 'D'
+          break;
+        case 's':
+          originalMessage += 'F'; // Lowercase 's' maps to 'F'
+          break;
+        case 't':
+          originalMessage += 'R'; // Lowercase 't' maps to 'R'
+          break;
+        case 'u':
+          originalMessage += '3'; // Lowercase 'u' maps to '3'
+          break;
+        case 'v':
+          originalMessage += '{'; // Lowercase 'v' maps to '{'
+          break;
+        case 'w':
+          originalMessage += '}'; // Lowercase 'w' maps to '}'
+          break;
+        case 'x':
+          originalMessage += '4'; // Lowercase 'x' maps to '4'
+          break;
+        case 'y':
+          originalMessage += 'Z'; // Lowercase 'y' maps to 'Z'
+          break;
+        case 'z':
+          originalMessage += '3'; // Lowercase 'z' maps to '3'
+          break;
         default:
           originalMessage += character; // If not a hashed character, keep it unchanged
           break;
@@ -183,8 +262,8 @@
   // Describe your extension
   var descriptor = {
     blocks: [
-      ['r', 'Hash In DE3 %s', 'customHash', ''],
-      ['r', 'Reverse Hash %s', 'reverseHash', '']
+      ['r', '@!6721SAY@!5216AS*1 %s', 'customHash', ''],
+      ['r', 'R=@!&*@!&*@!&YSG@!&Ah %s', 'reverseHash', '']
     ],
   };
 
