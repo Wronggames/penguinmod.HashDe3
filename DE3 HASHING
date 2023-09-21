@@ -1,0 +1,103 @@
+(function(ext) {
+  // Define custom hashing block
+  ext.customHash = function(input) {
+    let hashedResult = '';
+    for (let i = 0; i < input.length; i++) {
+      const letter = input.charAt(i).toUpperCase(); // Convert input to uppercase
+      switch (letter) {
+        case 'A':
+          hashedResult += '1';
+          break;
+        case 'B':
+          hashedResult += 'W';
+          break;
+        case 'C':
+          hashedResult += '#';
+          break;
+        case 'D':
+          hashedResult += 'U';
+          break;
+        case 'E':
+          hashedResult += 'T';
+          break;
+        case 'F':
+          hashedResult += 'S';
+          break;
+        case 'G':
+          hashedResult += 'R';
+          break;
+        case 'H':
+          hashedResult += 'Q';
+          break;
+        case 'I':
+          hashedResult += 'P';
+          break;
+        case 'J':
+          hashedResult += 'O';
+          break;
+        case 'K':
+          hashedResult += 'N';
+          break;
+        case 'L':
+          hashedResult += 'M';
+          break;
+        case 'M':
+          hashedResult += 'L';
+          break;
+        case 'N':
+          hashedResult += '!';
+          break;
+        case 'O':
+          hashedResult += 'J';
+          break;
+        case 'P':
+          hashedResult += 'I';
+          break;
+        case 'Q':
+          hashedResult += 'H';
+          break;
+        case 'R':
+          hashedResult += 'D';
+          break;
+        case 'S':
+          hashedResult += 'F';
+          break;
+        case 'T':
+          hashedResult += 'R';
+          break;
+        case 'U':
+          hashedResult += '3';
+          break;
+        case 'V':
+          hashedResult += '{';
+          break;
+        case 'W':
+          hashedResult += '}';
+          break;
+        case 'X':
+          hashedResult += '4';
+          break;
+        case 'Y':
+          hashedResult += 'Z';
+          break;
+        case 'Z':
+          hashedResult += '3';
+          break;
+        default:
+          hashedResult += letter; // If not a letter, keep it unchanged
+          break;
+      }
+    }
+    return hashedResult;
+  };
+  
+  // Describe your extension
+  var descriptor = {
+    blocks: [
+      ['r', 'custom hash %s', 'customHash', '']
+    ],
+  };
+  
+  // Register the extension
+  ScratchExtensions.register('Custom Hash Extension', descriptor, ext);
+})(this);
